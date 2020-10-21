@@ -1,0 +1,12 @@
+<form #form="ngForm" autocomplete="off">
+  <h1 mat-dialog-title>Jogador</h1>
+  <div mat-dialog-content>
+    <mat-form-field>
+      <input matInput type="text" placeholder="Nome do Jogador" [(ngModel)]="data.name" name="name" required />
+    </mat-form-field>
+  </div>
+
+  <div mat-dialog-actions align="end">
+    <button mat-button color="primary" [mat-dialog-close]="data" [disabled]="!form.valid">Salvar</button>
+  </div>
+</form>

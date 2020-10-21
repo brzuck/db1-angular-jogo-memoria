@@ -1,0 +1,58 @@
+.main {
+  padding: 30px;
+}
+
+.header-container {
+  text-align: center;
+}
+
+.info-container {
+  text-align: center;
+}
+
+.button-row .mat-flat-button:not(:last-child) {
+  margin-right: 15px;
+}
+
+.card-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+
+  justify-content: center;
+  align-items: center;
+
+  max-width: 1100px;
+}
+
+.card-wrapper > mat-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 1 0 14%;
+  height: 100px;
+  margin: 15px;
+
+  cursor: pointer;
+}
+
+.card-wrapper > mat-card.visible {
+  color: red;
+  cursor: default;
+}
+
+.card-wrapper > mat-card.selected {
+  color: blue;
+  cursor: default;
+}
+
+.rank-container {
+  padding-top: 30px;
+  text-align: center;
+}
