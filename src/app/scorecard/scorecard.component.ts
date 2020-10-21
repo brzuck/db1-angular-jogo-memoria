@@ -9,6 +9,8 @@ import { Rank } from 'src/models/rank';
 export class ScorecardComponent implements OnInit {
   @Input() rankList: Rank[] = [];
 
+  displayedColumns: string[] = ['position', 'name', 'rounds'];
+
   constructor() {}
 
   ngOnInit(): void {}

@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Card } from 'src/models/card';
+import { Player } from 'src/models/player';
 import { Rank } from 'src/models/rank';
-import { Card } from '../models/card';
-import { Player } from '../models/player';
 import { DialogPlayerNameComponent } from './dialog-player-name/dialog-player-name.component';
+
+const PAIRS_AMOUNT = 10;
+const CARD_TURN_DELAY_IN_MS = 2000;
 
 @Component({
   selector: 'app-root',
@@ -11,10 +14,9 @@ import { DialogPlayerNameComponent } from './dialog-player-name/dialog-player-na
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  cardTurnDelayInMs: number = 2000;
   waitingForDelay: boolean = false;
 
-  pairs: number[] = [1, 10];
+  pairs: number[] = Array.from(Array(PAIRS_AMOUNT)).map((_, index) => index);
   cards: Card[] = [];
 
   player: Player;
@@ -80,7 +82,7 @@ export class AppComponent implements OnInit {
     this.shuffleArray(this.cards);
   }
 
-  async onClickCard(selectedCardValue: number, selectedCardIndex: number) {
+  async onClickCard(_selectedCardValue: number, selectedCardIndex: number) {
     if (this.cards[selectedCardIndex].visible || this.waitingForDelay) {
       return;
     }
@@ -130,7 +132,7 @@ export class AppComponent implements OnInit {
 
       // Delay before turning the cards around, so player can see what the card was
       this.waitingForDelay = true;
-      await this.delay(this.cardTurnDelayInMs).finally(() => (this.waitingForDelay = false));
+      await this.delay(CARD_TURN_DELAY_IN_MS).finally(() => (this.waitingForDelay = false));
     }
 
     // Always unselect both cards after second selection

@@ -1,27 +1,15 @@
-# Db1AngularJogoMemoria
+# DB1 - Jogo da Memória
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.7.
+Este projeto foi criado utilizando o [Angular CLI](https://github.com/angular/angular-cli) versão 10.1.7.
 
-## Development server
+## Configurando
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Instalar as dependências via yarn: `yarn` ou npm: `npm install`.
 
-## Code scaffolding
+No início do arquivo do componente principal, `app.component.ts`, é possível definir dois parâmetros. São eles:
+`PAIRS_AMOUNT` - Quantidade de pares de cartas a ser gerado. Valor padrão: 10;
+`CARD_TURN_DELAY_IN_MS = 2000` - Tempo em milissegundos em que as cartas ficarão visíveis após a segunda jogada, antes de ser virada. Valor padrão: 2000 (2 segundos);
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Executando
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Executar `yarn start` ou `npm start`, de acordo com a ferramenta utilizada. A aplicação estará disponível em `http://localhost:4200/`.

@@ -6,6 +6,17 @@ body {
 }
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
   background: #f2f2f2;
+}
+
+.mat-header-row .mat-header-cell,
+.mat-footer-row .mat-footer-cell {
+  justify-content: center;
+  font-style: italic;
+  text-align: center;
+}
+
+.hide {
+  display: none;
 }

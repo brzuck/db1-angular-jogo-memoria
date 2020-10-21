@@ -1,0 +1,11 @@
+.mat-table .cdk-column-position {
+  width: 70px;
+}
+
+.mat-table .cdk-column-name {
+  width: 250px;
+}
+
+.mat-table .cdk-column-rounds {
+  width: 70px;
+}

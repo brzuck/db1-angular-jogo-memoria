@@ -10,7 +10,7 @@
   text-align: center;
 }
 
-.button-row .mat-flat-button:not(:last-child) {
+.button-row button:not(:last-child) {
   margin-right: 15px;
 }
 
@@ -55,4 +55,10 @@
 .rank-container {
   padding-top: 30px;
   text-align: center;
+}
+
+.rank-container app-scorecard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
