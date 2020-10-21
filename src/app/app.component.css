@@ -30,28 +30,6 @@
   max-width: 1100px;
 }
 
-.card-wrapper > mat-card {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  flex: 1 0 14%;
-  height: 100px;
-  margin: 15px;
-
-  cursor: pointer;
-}
-
-.card-wrapper > mat-card.visible {
-  color: red;
-  cursor: default;
-}
-
-.card-wrapper > mat-card.selected {
-  color: blue;
-  cursor: default;
-}
-
 .rank-container {
   padding-top: 30px;
   text-align: center;
@@ -61,4 +39,75 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.flip-card {
+  display: flex;
+
+  flex: 1 0 14%;
+  height: 100px;
+  margin: 15px;
+
+  cursor: pointer;
+
+  background-color: #f1f1f1;
+  border: 1px solid #b2b2b2;
+
+  min-width: 100px;
+  perspective: 1000px;
+}
+
+.flip-card.visible {
+  color: red;
+  cursor: default;
+}
+
+.flip-card.selected {
+  color: blue;
+  cursor: default;
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card.selected .flip-card-inner,
+.flip-card.visible .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front,
+.flip-card-back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+
+  font-size: 26px;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: #f1f1f1;
+  color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color: steelblue;
+  color: white;
+  transform: rotateY(180deg);
 }

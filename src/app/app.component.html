@@ -16,13 +16,17 @@
 
   <div class="card-container">
     <div class="card-wrapper">
-      <mat-card
+      <div
+        class="flip-card"
         *ngFor="let item of cards; let i = index"
         (click)="onClickCard(item, i)"
         [ngClass]="{ visible: item.visible, selected: item.selected }"
       >
-        <h2>{{ item.visible || item.selected ? item.value : '?' }}</h2>
-      </mat-card>
+        <div class="flip-card-inner">
+          <div class="flip-card-back">{{ item.value }}</div>
+          <div class="flip-card-front">?</div>
+        </div>
+      </div>
     </div>
   </div>
 
