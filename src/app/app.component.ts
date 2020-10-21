@@ -94,6 +94,9 @@ export class AppComponent implements OnInit {
 
       // Check if game is done
       if (this.cards.every((card) => card.visible)) {
+        // Delay before finishing the game, so the last card will be visible
+        await this.delay(100);
+
         this.ranking.push({ player: this.player, rounds: this.round } as Rank);
         this.ranking = [...this.ranking.sort((a, b) => a.rounds - b.rounds)];
 
